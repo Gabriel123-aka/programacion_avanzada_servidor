@@ -6,11 +6,16 @@ api = Api(app)
 
 class HelloWorld(Resource):
     def get(self):
-        return {'hello': 'world'}
+        return 'Hola mundo'
+
+class InicioDeSesion(Resource):
+    def get(self):
+        return 'Hola, estamos construyendo un inicio de sesion'
 
 api.add_resource(HelloWorld, '/')
+api.add_resource(InicioDeSesion, '/login')
 
-if __name__ == '__main__':
-    app.run(debug=True, port=8000)
+
+app.run(debug=True, port=8000)
     
     # 172.24.160.1
