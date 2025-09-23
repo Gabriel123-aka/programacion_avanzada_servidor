@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Usuario</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-purple-900 to-gray-900">
+
+  <div class="bg-gradient-to-br from-purple-950/70 via-gray-900/70 to-black/70 backdrop-blur-xl p-8 rounded-2xl shadow-2xl w-96 border border-purple-700/30">
+    <h2 class="text-3xl font-bold text-center mb-6 bg-gradient-to-r from-purple-400 to-fuchsia-500 bg-clip-text text-transparent">
+      Crear Cuenta
+    </h2>
+    
+    <form action="#" method="POST" class="space-y-5">
+      <!-- Nombre -->
+      <div>
+        <label for="nombre" class="block text-sm font-medium text-purple-300">Nombre completo</label>
+        <input type="text" id="nombre" name="nombre" required
+          class="mt-1 block w-full px-4 py-2 bg-gray-900/60 border border-purple-700/40 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:outline-none" 
+          placeholder="Ej. Juan Pérez">
+      </div>
+
+      <!-- Correo -->
+      <div>
+        <label for="email" class="block text-sm font-medium text-purple-300">Correo electrónico</label>
+        <input type="email" id="email" name="email" required
+          class="mt-1 block w-full px-4 py-2 bg-gray-900/60 border border-purple-700/40 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:outline-none" 
+          placeholder="ejemplo@correo.com">
+      </div>
+
+      <!-- Contraseña -->
+      <div>
+        <label for="password" class="block text-sm font-medium text-purple-300">Contraseña</label>
+        <input type="password" id="password" name="password" required
+          class="mt-1 block w-full px-4 py-2 bg-gray-900/60 border border-purple-700/40 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:outline-none" 
+          placeholder="••••••••">
+      </div>
+
+      <!-- Número telefónico -->
+      <div>
+        <label for="telefono" class="block text-sm font-medium text-purple-300">Número telefónico</label>
+        <input type="tel" id="telefono" name="telefono" required
+          class="mt-1 block w-full px-4 py-2 bg-gray-900/60 border border-purple-700/40 rounded-xl text-white placeholder-gray-400 focus:ring-2 focus:ring-purple-500 focus:outline-none" 
+          placeholder="+52 55 1234 5678">
+      </div>
+
+      <!-- Botón -->
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-purple-600 to-fuchsia-600 text-white py-2 rounded-xl hover:from-purple-700 hover:to-fuchsia-700 transition shadow-lg shadow-purple-800/40">
+        Registrarme
+      </button>
+    </form>
+
+    <!-- Enlace -->
+    <p class="mt-6 text-sm text-center text-purple-300">
+      ¿Ya tienes cuenta? <a href="/login" class="text-fuchsia-400 hover:underline">Inicia sesión</a>
+    </p>
+  </div>
+
+</body>
+</html>

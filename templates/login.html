@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Iniciar sesión</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme: dark; }
+    html, body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif; }
+    .animate-gradient {
+      background-size: 200% 200%;
+      animation: gradientMove 12s ease infinite;
+    }
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+  </style>
+</head>
+<body class="h-full bg-midnight-900 text-slate-100">
+  <div class="fixed inset-0 -z-10 overflow-hidden">
+    <div class="absolute inset-0 animate-gradient" style="background-image: radial-gradient(1200px 600px at 10% 10%, rgba(59,130,246,0.08), transparent), radial-gradient(900px 500px at 90% 20%, rgba(139,92,246,0.15), transparent), radial-gradient(700px 400px at 50% 100%, rgba(236,72,153,0.10), transparent), linear-gradient(135deg, #0b0a10 0%, #171427 50%, #111019 100%);"></div>
+    <div class="absolute inset-0 backdrop-blur-[2px]"></div>
+  </div>
+  <main class="min-h-screen flex items-center justify-center p-6">
+    <section class="w-full max-w-md">
+      <div class="relative bg-midnight-800/70 rounded-2xl border border-purple-500/10 shadow-glow overflow-hidden">
+        <div class="pointer-events-none absolute -top-10 -right-10 h-36 w-36 rounded-full bg-purple-600/20 blur-3xl"></div>
+        <div class="pointer-events-none absolute -bottom-8 -left-8 h-28 w-28 rounded-full bg-fuchsia-600/20 blur-3xl"></div>
+        <div class="px-8 pt-8 pb-6">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-purple-500 to-fuchsia-600 grid place-content-center shadow-glow">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-6 w-6 text-white/90">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.5 4.5l6 3-6 3-6-3 6-3z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19.5 10.5v6l-6 3v-6l6-3zM4.5 7.5v6l6 3v-6l-6-3z"/>
+              </svg>
+            </div>
+            <div>
+              <h1 class="text-xl font-semibold leading-tight">Bienvenido de nuevo</h1>
+              <p class="text-sm text-slate-300/80">Inicia sesión para continuar</p>
+            </div>
+          </div>
+          <form action="#" method="POST" class="space-y-5" novalidate>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-1">Correo electrónico</label>
+              <input id="email" name="email" type="email" autocomplete="email" required
+                class="w-full rounded-xl bg-midnight-900 border border-slate-700/60 px-4 py-3 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500/70 focus:border-transparent transition"
+                placeholder="tucorreo@ejemplo.com" />
+              <p class="mt-1 text-xs text-slate-400">Usa el correo con el que te registraste.</p>
+            </div>
+            <div>
+              <div class="flex items-center justify-between mb-1">
+                <label for="password" class="block text-sm font-medium">Contraseña</label>
+                <a href="#" class="text-xs text-purple-300 hover:text-purple-200 hover:underline">¿Olvidaste tu contraseña?</a>
+              </div>
+              <div class="relative">
+                <input id="password" name="password" type="password" autocomplete="current-password" required
+                  class="w-full rounded-xl bg-midnight-900 border border-slate-700/60 px-4 py-3 pr-11 text-slate-100 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-purple-500/70 focus:border-transparent transition"
+                  placeholder="••••••••" />
+                <button type="button" id="togglePassword" aria-label="Mostrar u ocultar contraseña"
+                  class="absolute inset-y-0 right-0 px-3 grid place-content-center text-slate-400 hover:text-slate-200 focus:outline-none">
+                  <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.036 12.322a1.012 1.012 0 010-.644C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.964 7.178.07.207.07.43 0 .644C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.964-7.178z"/>
+                    <circle cx="12" cy="12" r="3" stroke-width="1.5" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <label class="inline-flex items-center gap-2 text-sm text-slate-300/90">
+                <input type="checkbox" class="h-4 w-4 rounded border-slate-700/60 bg-midnight-900 text-purple-500 focus:ring-purple-500/60" />
+                Recuérdame
+              </label>
+              <span class="text-xs text-slate-400">Sesión expira tras 14 días</span>
+            </div>
+            <button type="submit"
+              class="group w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-purple-600 to-fuchsia-600 px-4 py-3 font-semibold text-white shadow-glow hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-purple-400 transition">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" class="h-5 w-5 opacity-90 group-hover:translate-x-0.5 transition">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16.5 3.75l3.75 3.75-3.75 3.75M19.5 7.5H10.5a6 6 0 100 12h1.5"/>
+              </svg>
+              Iniciar sesión
+            </button>
+            <p class="text-center text-sm text-slate-400">¿No tienes cuenta? <a href="/signup" class="text-purple-300 hover:text-purple-200 hover:underline font-medium">Crear una</a></p>
+          </form>
+        </div>
+      </div>
+      <p class="mt-6 text-center text-xs text-slate-400/80">Protegido por reCAPTCHA • <a href="#" class="underline hover:text-slate-200">Términos</a> • <a href="#" class="underline hover:text-slate-200">Privacidad</a></p>
+    </section>
+  </main>
+  <script>
+    const toggle = document.getElementById('togglePassword');
+    const pwd = document.getElementById('password');
+    const eye = document.getElementById('eyeIcon');
+    toggle?.addEventListener('click', () => {
+      const isHidden = pwd.type === 'password';
+      pwd.type = isHidden ? 'text' : 'password';
+      eye.innerHTML = isHidden
+        ? '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c1.67 0 3.262-.363 4.695-1.016M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.774 3.162 10.066 7.5a10.523 10.523 0 01-4.293 5.246M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65" />'
+        : '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.036 12.322a1.012 1.012 0 010-.644C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.964 7.178.07.207.07.43 0 .644C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.964-7.178z"/><circle cx="12" cy="12" r="3" stroke-width="1.5" />';
+    });
+  </script>
+</body>
+</html>

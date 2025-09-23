@@ -7,3 +7,4 @@ class RutasApi:
         
         api.add_resource(HelloWorld, '/')
         api.add_resource(InicioDeSesion, '/login')
+        api.add_resource(RegistrodeUsuario, '/signup')
